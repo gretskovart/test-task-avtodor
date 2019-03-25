@@ -1,0 +1,30 @@
+@import "./../variables";
+
+.slider{
+  position: relative;
+  max-width: @width;
+  margin: 0 auto;
+  z-index: 1;
+  &__img{
+    width: 100%;
+    height: auto;
+  }
+  &__text{
+    font-family: @font-family;
+    font-weight: 600;
+    color: #000;
+    font-size: 1.68rem;
+    position: absolute;
+    left: 56px;
+    right: 0;
+    bottom: 40px;
+    margin: 0 auto;
+    max-width: @width;
+  }
+}
+
+@media (max-width: 640px){
+  .slider__text{
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,67 @@
+@import "./../variables";
+
+.footer{
+  background-color: #edf0f2;
+  min-height: 198px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 39px;
+  &__inner{
+    width: @width;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__logo{
+    display: block;
+    background: url(../images/logo.png), #edf0f2 no-repeat;
+    background-blend-mode: luminosity;
+    background-size: 138px 80px;
+    width: 138px;
+    height: 80px;
+    position: relative;
+    top: -22px;
+    &:hover{
+      background-blend-mode: normal;
+    }
+  }
+  &__btn{
+    position: relative;
+    top: -22px;
+  }
+  &__copyright{
+    text-align: right;
+    position: relative;
+    top: 3px;
+    left: 2px;
+  }
+  &__third-nav{
+    width: 45%;
+    position: relative;
+    left: 28px;
+    top: -6px;
+  }
+  &__block-right{
+    justify-content: space-between;
+  }
+  &__telephone{
+    top: -9px;
+    position: relative;
+  }
+}
+
+@media (max-width: 768px){
+  .footer{
+    &__logo{
+      margin-top: 35px;
+      position: initial;
+    }
+    &__third-nav{
+      position: initial;
+    }
+    &__copyright{
+      left: 0;
+    }
+  }
+}

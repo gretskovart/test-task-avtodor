@@ -1,0 +1,17 @@
+doctype html
+html 
+  head
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Тестовое задание - Автодор
+    link(href='./css/all.css', rel='stylesheet')
+  body
+    header.header
+      include components/header
+    main.main
+      include components/slider
+      .flex-container.content-wrapper
+        include components/aside
+        include components/content
+    footer.footer
+      include components/footer
+    script(src="./js/all.js")

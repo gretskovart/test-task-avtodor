@@ -1,0 +1,138 @@
+@import "./../variables";
+
+.second-nav{
+  max-width: @width;
+  margin: 0 auto;
+  &__list{
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    &::before{
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: url(../images/home-icon.png) no-repeat;
+      position: absolute;
+      left: 10px;
+      top: 11px;
+      z-index: 2;
+    }
+    &::after{
+      content: "";
+      display: block;
+      height: 35px;
+      width: auto;
+      position: absolute;
+      left: 0;
+      background: #dfdfdf;
+      z-index: 1;
+      width: 100%;
+    }
+  }
+  &__item{
+    display: inline-block;
+    padding: 8.5px 9px;
+    background: #dfdfdf;
+    position: relative;
+    z-index: 3;
+    &:hover{
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    &::after{
+      content: "";
+      height: 82%;
+      width: 1px;
+      background: #fff;
+      position: absolute;
+      right: 0;
+      top: 9%;
+    }
+    &:last-child::after{
+      background: transparent;
+    }
+    &--active{
+      background: @orange;
+      padding: 14.5px 15px;
+      z-index: 4;
+      &::after, &::before{
+        width: 25px;
+        height: 75%;
+        top: 6px;
+      }
+      &::after{
+        background: linear-gradient(to right, rgba(0,0,0,.2) 0%, transparent);
+        right: -25px;
+      }
+      &::before{
+        content: "";
+        position: absolute;
+        background: linear-gradient(to left, rgba(0,0,0,.2) 0%, transparent);
+        left: -25px;
+      }
+    }
+  }
+  &__link{
+    font-family: @font-family;
+    font-weight: 400;
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: .81rem;
+  }
+  &__toggle{
+    background: @orange;
+    &__span{
+      background: #fff;
+      &::before, &::after{
+        background: #fff;
+      }
+    }
+  }
+  &--active{
+    max-height: 100%;
+  }
+}
+
+@media (max-width: 768px){
+  .second-nav{
+    bottom: 0;
+    &__list{
+      flex-direction: column;
+      align-items: normal;
+      justify-content: flex-start;
+      background: #dfdfdf;
+      top: 40px;
+      &--active{
+        max-height: initial;
+      }
+      &::before, &::after{
+        display: none;
+      }
+    }
+    &__item{
+      margin: 0;
+      display: block;
+      text-align: center;
+      &::after{
+        display: none;
+      }
+    }
+    &__link{
+      color: #000;
+    }
+  }
+}
+
+@media (max-width: 990px) AND (min-width: 768px){
+  .second-nav{
+    &__link{
+      font-size: .59rem;
+    }
+    &__list{
+      justify-content: space-between;
+    }
+  }
+}

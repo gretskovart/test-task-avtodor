@@ -1,0 +1,22 @@
+@import "./../variables";
+
+.third-title{
+  font-family: @font-family;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
+  font-size: .8rem;
+  position: relative;
+  padding-left: 14px;
+  line-height: 26px;
+  &::before{
+    content: "";
+    display: block;
+    width: 9px;
+    height: 26px;
+    background: @orange;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

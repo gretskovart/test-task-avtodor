@@ -1,0 +1,105 @@
+@import "./../variables";
+
+.third-nav{
+  &__list{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__list, &__list--second{
+    padding: 0;
+    margin: 0;
+  }
+  &__item{
+    align-self: flex-start;
+    &--column{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__item, &__item--second{
+    list-style-type: none;
+  }
+  &__link{
+    font-family: @font-family;
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+    font-size: .75rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+    &:hover{
+      text-decoration: none;
+    }
+    &--second{
+      text-transform: initial;
+      text-decoration: none;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    &--column--2{
+      margin-top: 22px;
+    }
+  }
+  &__toggle{
+    background: @orange;
+    position: absolute;
+    left: 0;
+    top: 20px;
+    cursor: pointer;
+    &__span{
+      background: #edf0f2;
+      &::before, &::after{
+        background: #edf0f2;
+      }
+    }
+  }
+  &--active{
+    max-height: 100%;
+  }
+}
+
+@media (max-width: 768px){
+  .third-nav{
+    bottom: 0;
+    width: initial;
+    &__list{
+      flex-direction: column;
+      align-items: normal;
+      justify-content: center;
+      background: #edf0f2;
+      bottom: 198px;
+      &--active{
+        max-height: initial;
+      }
+      &::before, &::after{
+        display: none;
+      }
+    }
+    &__item{
+      margin: 0;
+      display: block;
+      padding-left: 20px;
+      &::after{
+        display: none;
+      }
+    }
+    &__link{
+      color: #000;
+      font-size: 1rem;
+      &--main{
+        display: block;
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 848px) AND (min-width: 768px){
+  .third-nav{
+    width: 40%;
+    &__link{
+      font-size: .6rem;
+    }
+  }
+}

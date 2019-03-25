@@ -1,0 +1,62 @@
+@import "./../variables";
+
+.header{
+  background: linear-gradient(to bottom, rgba(0,226,255,0.52) 0%,rgba(125,185,232,0) 100%), url(../images/background-header.png) 50% -10px no-repeat;
+  background-size: contain;
+  &__inner{
+    max-width: @width;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__logo{
+    display: block;
+    background: url(../images/logo.png) no-repeat;
+    width: 204px;
+    height: 118px;
+    margin: 6px 0 9px;
+  }
+  &__btn{
+    margin-top: 21px;
+  }
+  &__second-nav{
+    margin-bottom: 21px;
+    position: relative;
+    bottom: -2px;
+  }
+  &__telephone{
+    margin: 15px 0 0;
+  }
+}
+
+@media (max-width: 768px){
+  .header{
+    background-position-y: 0;
+    &__inner{
+      justify-content: flex-end;
+    }
+    &__second-nav{
+      bottom: 0;
+    }
+    &__logo{
+      background-size: 80%;
+      height: 95px;
+    }
+    &__block-right{
+      width: 60%;
+    }
+    &__btn{
+      margin-top: 12px;
+    }
+    &__telephone{
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 320px){
+  .header__logo{
+    height: 80px;
+  }
+}

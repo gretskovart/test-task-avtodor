@@ -1,0 +1,16 @@
+mixin product
+  .products__item.product
+    img(src="images/product.png", width="202", height="128", alt="Изображение техники").product__img
+    a(href="#").product__title Эскаватор-погрузчик
+    span.product__cost от 1000 руб./час
+    button.btn.product__btn.transition Заказать
+
+.products
+  h2.second-title Часто заказываемые
+  .products__list
+    +product
+    +product
+    +product
+    +product
+    +product
+    +product

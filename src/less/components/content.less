@@ -1,0 +1,23 @@
+@import "./../variables";
+
+.content{
+  flex: 1;
+  padding: 10px 0 0 29px;
+  &__text{
+    font-family: @font-family;
+    font-weight: 700;
+    color: #000;
+    font-size: .8rem;
+    margin: 0 0 20px;
+    line-height: 1.6;
+  }
+  &__article{
+    padding-top: 15px;
+  }
+}
+
+@media (max-width: 568px){
+  .content{
+    padding: 5%;
+  }
+}
